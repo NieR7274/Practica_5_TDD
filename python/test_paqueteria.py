@@ -9,9 +9,9 @@ def sistema():
 
 #Casos normales
 
-@pytest.mark.parametrize("pesopquete", [1, 2, 3, 4, 5])
-def test_Hasta_5kg_Estandar(pesopquete):
+@pytest.mark.parametrize("pesoPaquete", [1, 2, 3, 4, 5])
+def test_Hasta_5kg_Estandar(sistema,pesoPaquete):
 
-    resultado = sistema.Costo_Envio(pesopquete, "estandar")
+    resultado = sistema.Costo_Envio(pesoPaquete, "estandar")
 
     assert resultado == 50.00
