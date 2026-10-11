@@ -33,3 +33,16 @@ def test_Costo_Pequeño_Expres(sistema):
 
     resultado = sistema.Costo_Envio(1, "expres")
     assert resultado == 100.00
+
+@pytest.mark.parametrize("pesoPaquete, precioEsperado", [
+    (6, 120.00),
+    (10, 200.00),
+    (20, 400.00),
+    (50, 1000.00),
+    (100, 2000.00)
+])
+def test_Costo_Pesado_Expres(sistema,pesoPaquete, precioEsperado):
+
+    resultado = sistema.Costo_Envio(pesoPaquete, "expres")
+
+    assert resultado == precioEsperado
