@@ -28,3 +28,8 @@ def test_Mas_5kg_Estandar(sistema,pesoPaquete, precioEsperado):
     resultado = sistema.Costo_Envio(pesoPaquete, "estandar")
 
     assert resultado == precioEsperado
+
+def test_Costo_Pequeño_Expres(sistema):
+
+    resultado = sistema.Costo_Envio(1, "expres")
+    assert resultado == 100.00
