@@ -15,3 +15,16 @@ def test_Hasta_5kg_Estandar(sistema,pesoPaquete):
     resultado = sistema.Costo_Envio(pesoPaquete, "estandar")
 
     assert resultado == 50.00
+
+@pytest.mark.parametrize("pesoPaquete, precioEsperado", [
+    (6, 60.00),
+    (10, 100.00),
+    (20, 200.00),
+    (50, 500.00),
+    (100, 1000.00)
+])
+def test_Mas_5kg_Estandar(sistema,pesoPaquete, precioEsperado):
+
+    resultado = sistema.Costo_Envio(pesoPaquete, "estandar")
+
+    assert resultado == precioEsperado

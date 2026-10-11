@@ -2,10 +2,12 @@
 class Paqueteria:
     def Costo_Envio(self, pesoPaquete: float, tipoEnvio: str) -> float:
 
+       costoExtra = 0.0
+
        if pesoPaquete <= 5 and tipoEnvio == "estandar":
            return 50.00
-
-
+       
+       
 
 
 
