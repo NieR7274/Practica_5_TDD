@@ -5,7 +5,8 @@ class Paqueteria:
        if pesoPaquete <= 0:
                raise ValueError("El peso del paquete debe ser mayor que cero")
 
-       
+       if tipoEnvio not in ("estandar", "expres"):
+               raise ValueError("Tipo de envio no valido")
 
        costoExtra = 0.0
 
