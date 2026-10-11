@@ -56,3 +56,8 @@ def test_Peso_Cero(sistema):
 
     with pytest.raises(ValueError):
         sistema.Costo_Envio(0, "expres")
+
+def test_Tipo_Envio_Invalido(sistema):
+
+    with pytest.raises(ValueError):
+        sistema.Costo_Envio(5, "urgente")
