@@ -1,6 +1,6 @@
 import pytest
 
-from paqueteria import Paqueteria
+from python.paqueteria import Paqueteria
 
 @pytest.fixture
 def sistema():
