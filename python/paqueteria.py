@@ -2,6 +2,9 @@
 class Paqueteria:
     def Costo_Envio(self, pesoPaquete: float, tipoEnvio: str) -> float:
 
+       if pesoPaquete <= 0:
+               raise ValueError("El peso del paquete debe ser mayor que cero")
+
        costoExtra = 0.0
 
        if pesoPaquete <= 5 and tipoEnvio == "estandar":
