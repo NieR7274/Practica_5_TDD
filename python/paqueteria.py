@@ -10,7 +10,8 @@ class Paqueteria:
        if pesoPaquete > 5 and tipoEnvio == "estandar":
                   costoExtra = (pesoPaquete - 5) * 10
                   return 50.00 + costoExtra
-       
+       if pesoPaquete <= 5 and tipoEnvio == "expres":
+              return 100.00
 
 
 
