@@ -46,3 +46,13 @@ def test_Costo_Pesado_Expres(sistema,pesoPaquete, precioEsperado):
     resultado = sistema.Costo_Envio(pesoPaquete, "expres")
 
     assert resultado == precioEsperado
+
+def test_Peso_Negativo(sistema):
+
+    with pytest.raises(ValueError):
+        sistema.Costo_Envio(-1, "estandar")
+
+def test_Peso_Cero(sistema):
+
+    with pytest.raises(ValueError):
+        sistema.Costo_Envio(0, "expres")
