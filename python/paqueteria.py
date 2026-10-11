@@ -8,20 +8,17 @@ class Paqueteria:
        if tipoEnvio not in ("estandar", "expres"):
                raise ValueError("Tipo de envio no valido")
 
-       costoExtra = 0.0
+       Costobase = 50.00
+       ExpresMultiplicativo = 2.00
 
-       if pesoPaquete <= 5 and tipoEnvio == "estandar":
-           return 50.00
+       if pesoPaquete <= 5 :
+           costoTotal = Costobase
+       else:
+            costoExtra = (pesoPaquete - 5) * 10
+            costoTotal = Costobase + costoExtra
+
+       if  tipoEnvio == "expres":
+          costoTotal = costoTotal * ExpresMultiplicativo
+
+       return costoTotal 
        
-       if pesoPaquete > 5 and tipoEnvio == "estandar":
-                  costoExtra = (pesoPaquete - 5) * 10
-                  return 50.00 + costoExtra
-       
-       if pesoPaquete <= 5 and tipoEnvio == "expres":
-              return 100.00
-
-       if pesoPaquete > 5 and tipoEnvio == "expres":
-                         costoExtra = (pesoPaquete - 5) * 10
-                         return (50.00 + costoExtra) * 2
-
-
